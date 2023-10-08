@@ -9,7 +9,7 @@ const TopNavBar = () => {
           Dfe Comunica Sefaz
         </a> */}
         <a>
-          <LogoScalar color="#9932f8" width="200" height="50" />
+          <LogoScalar color="black" width={200} height={50} />
         </a>
 
         <div className="collapse navbar-collapse">

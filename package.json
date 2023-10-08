@@ -3,10 +3,7 @@
   "version": "0.0.0-development",
   "description": "Comunica dfe com sefaz",
   "author": "Jonas Gedrat",
-  "license": "MIT",
-  "engines": {
-    "node": ">=16"
-  },
+  "license": "MIT", 
   "repository": {
     "type": "git",
     "url": "https://github.com/jonasgedrat/dfe-comunica-sefaz.git"
