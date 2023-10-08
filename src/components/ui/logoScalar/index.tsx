@@ -1,7 +1,16 @@
 import React from 'react'
 
-const LogoScalar = (props) => {
-  const { color, width, height, className } = props
+const LogoScalar = ({
+  color,
+  width,
+  height,
+  className,
+}: {
+  color: string
+  width: number
+  height: number
+  className: string
+}) => {
   return (
     <svg
       id="scalarerpsvg"
