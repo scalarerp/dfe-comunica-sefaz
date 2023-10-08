@@ -1,11 +1,15 @@
 import React from 'react'
+import LogoScalar from '../logoScalar'
 
 const TopNavBar = () => {
   return (
     <nav className="navbar navbar-expand-sm">
       <div className="container-fluid">
-        <a className="navbar-brand" href="/">
+        {/* <a className="navbar-brand" href="/">
           Dfe Comunica Sefaz
+        </a> */}
+        <a>
+          <LogoScalar color="#9932f8" width="200" height="50" />
         </a>
 
         <div className="collapse navbar-collapse">
@@ -16,7 +20,7 @@ const TopNavBar = () => {
               </a>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="/carregaCertificado">
+              <a className="nav-link" href="/carrega">
                 Carrega Certificado
               </a>
             </li>
