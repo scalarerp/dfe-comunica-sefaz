@@ -19,5 +19,5 @@
     "downlevelIteration": true
   },
   "exclude": ["node_modules"],
-  "include": ["src", "**/*.ts", "**/*.tsx", "tailwind.config.js"]
+  "include": ["src", "**/*.ts", "**/*.tsx"]
 }
