@@ -3,7 +3,7 @@
   "version": "0.0.0-development",
   "description": "Comunica dfe com sefaz",
   "author": "Jonas Gedrat",
-  "license": "MIT", 
+  "license": "MIT",
   "repository": {
     "type": "git",
     "url": "https://github.com/jonasgedrat/dfe-comunica-sefaz.git"
@@ -12,7 +12,7 @@
     "url": "https://github.com/jonasgedrat/dfe-comunica-sefaz.git/issues"
   },
   "homepage": "https://github.com/jonasgedrat/dfe-comunica-sefaz.git#readme",
- "scripts": {
+  "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
     "format": "prettier --write \"**/*.{js,jsx,ts,tsx,json,md,mdx,css,scss}\""
@@ -22,12 +22,12 @@
     "bootstrap": "^5.3.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "react-router-dom": "^6.15.0"
+    "react-router-dom": "^6.15.0"    
   },
   "devDependencies": {
     "@types/node": "^20.5.7",
     "@types/react": "^18.2.15",
-    "@types/react-dom": "^18.2.7",
+    "@types/react-dom": "^18.2.7",    
     "@typescript-eslint/eslint-plugin": "^6.0.0",
     "@typescript-eslint/parser": "^6.0.0",
     "@vitejs/plugin-react": "^4.0.3",
