@@ -1,8 +1,7 @@
-import { IAutorizador, UfEmi } from 'types/uf'
-import { TipoAmbiente, TipoServicoNFe } from 'types/nfe/tipos'
-import { ModeloDocumento } from 'types/nfe/tipos'
 import { nfe4_0Mod55WS } from './nfe4_0Mod55WS'
 import { nfe4_0Mod65WS } from './nfe4_0Mod65WS'
+import { ModeloDocumento, TipoAmbiente, TipoServicoNFe } from './types/nfe/tipos'
+import { type UfEmi, type IAutorizador } from './types/uf'
 
 export const getNfeURL = (
   ufEmi: UfEmi,
@@ -22,32 +21,34 @@ export const getNfeURL = (
 
   const _u = tipoAmbiente === TipoAmbiente.Producao1 ? _urlTudo?.producao : _urlTudo?.homologacao
 
-  let result: string = ''
+  let result = ''
 
-  switch (tipoServicoNFe) {
-    case TipoServicoNFe.NfeAutorizacao:
-      result = _u?.NfeAutorizacao!
-      break
-    case TipoServicoNFe.NfeRetAutorizacao:
-      result = _u?.NfeRetAutorizacao!
-      break
-    case TipoServicoNFe.NfeInutilizacao:
-      result = _u?.NfeInutilizacao!
-      break
-    case TipoServicoNFe.NfeConsultaProtocolo:
-      result = _u?.NfeConsultaProtocolo!
-      break
-    case TipoServicoNFe.NfeStatusServico:
-      result = _u?.NfeStatusServico!
-      break
-    case TipoServicoNFe.RecepcaoEvento:
-      result = _u?.RecepcaoEvento!
-      break
-    // case TipoServicoNFe.CscNFCe:
-    //   result = _u?.CscNFCe!
-    //   break
-    default:
-      break
+  if (_u) {
+    switch (tipoServicoNFe) {
+      case TipoServicoNFe.NfeAutorizacao:
+        result = _u.NfeAutorizacao!
+        break
+      case TipoServicoNFe.NfeRetAutorizacao:
+        result = _u.NfeRetAutorizacao!
+        break
+      case TipoServicoNFe.NfeInutilizacao:
+        result = _u.NfeInutilizacao!
+        break
+      case TipoServicoNFe.NfeConsultaProtocolo:
+        result = _u.NfeConsultaProtocolo!
+        break
+      case TipoServicoNFe.NfeStatusServico:
+        result = _u.NfeStatusServico!
+        break
+      case TipoServicoNFe.RecepcaoEvento:
+        result = _u.RecepcaoEvento!
+        break
+      // case TipoServicoNFe.CscNFCe:
+      //   result = _u?.CscNFCe!
+      //   break
+      default:
+        break
+    }
   }
 
   if (!result || result === '') {
