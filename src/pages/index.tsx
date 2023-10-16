@@ -2,7 +2,7 @@
 import Head from 'next/head'
 import styles from './index.module.css'
 import { getNfeStatusServico } from '~/dfe-comunica-sefaz/comunicaSefaz'
-import { ModeloDocumento, TipoAmbiente } from '~/dfe-comunica-sefaz/types/nfe/tipos'
+import { ModeloDocumento, TipoAmbiente } from '~/dfe-comunica-sefaz/types/nfe/basicTypes'
 import { UfEmi } from '~/dfe-comunica-sefaz/types/uf'
 
 export default function Home() {

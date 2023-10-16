@@ -1,4 +1,4 @@
-import { UfEmi } from '~/dfe-comunica-sefaz/types/uf'
+import { UfEmi } from 'lib/types/uf'
 
 export const getUfIbge = (ufEmi: UfEmi) => {
   switch (ufEmi) {

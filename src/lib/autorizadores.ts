@@ -1,6 +1,6 @@
 import { nfe4_0Mod55WS } from './nfe4_0Mod55WS'
 import { nfe4_0Mod65WS } from './nfe4_0Mod65WS'
-import { ModeloDocumento, TipoAmbiente, TipoServicoNFe } from './types/nfe/tipos'
+import { ModeloDocumento, TipoAmbiente, TipoServicoNFe } from './types/nfe/basicTypes'
 import { type UfEmi, type IAutorizador } from './types/uf'
 
 export const getNfeURL = (
