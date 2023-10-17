@@ -1,4 +1,4 @@
-import { UfEmi } from 'lib/types/uf'
+import { UfEmi, type ufEmiKeys } from 'lib/types/uf'
 
 export const getUfIbge = (ufEmi: UfEmi) => {
   switch (ufEmi) {
@@ -60,3 +60,33 @@ export const getUfIbge = (ufEmi: UfEmi) => {
       return '99'
   }
 }
+
+export const ufEmiList: ufEmiKeys[] = [
+  'AC',
+  'AL',
+  'AM',
+  'AP',
+  'BA',
+  'CE',
+  'DF',
+  'ES',
+  'GO',
+  'MA',
+  'MG',
+  'MS',
+  'MT',
+  'PA',
+  'PB',
+  'PE',
+  'PI',
+  'PR',
+  'RJ',
+  'RN',
+  'RO',
+  'RR',
+  'RS',
+  'SC',
+  'SE',
+  'SP',
+  'TO',
+]

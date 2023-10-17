@@ -28,6 +28,8 @@ export enum UfEmi {
   TO = 'TO',
 }
 
+export type ufEmiKeys = keyof typeof UfEmi
+
 export type IAutorizador =
   | 'AM'
   | 'BA'
