@@ -35,8 +35,6 @@ const getHttpAgent = (certificado: string, senha: string): https.Agent => {
   return httpsAgent
 }
 
-module.exports = { CA: CA }
-
 export const soapXmlPost = async (options: IHttpSoap) => {
   const { url, xmlBody, certificado, senha, envelopSoap = true } = options
 

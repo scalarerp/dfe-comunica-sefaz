@@ -24,6 +24,7 @@ export const consultaStatusServico = async (options: IConsultaStatusServico) => 
     senha: senha,
   }
   console.log(soapOptions)
+
   const result = await soapXmlPost(soapOptions)
 
   return result
