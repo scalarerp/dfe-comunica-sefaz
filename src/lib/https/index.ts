@@ -42,9 +42,13 @@ export const soapXmlPost = async (options: IHttpSoap) => {
 
   const result = await axios.post(url, body, {
     headers: {
-      'User-Agent': `scalar-comunica-dfe/0-1`,
+      //'User-Agent': `scalar-comunica-dfe/0-1`,
       // 'User-Agent': `scalar-comunica-dfe/${VERSION}`,
-      'Content-Type': 'application/soap+xml; charset=utf-8',
+      'Content-Type': 'application/soap+xml;charset=utf-8',
+      'Access-Control-Allow-Origin': '*',
+      // 'Access-Control-Allow-Credentials': true,
+      'Access-Control-Allow-Headers': 'Content-Type',
+      'Access-Control-Allow-Methods': 'GET,POST',
     },
     timeout: 60000,
     httpsAgent: getHttpAgent(certificado, senha),
@@ -53,3 +57,21 @@ export const soapXmlPost = async (options: IHttpSoap) => {
   console.log(result)
   return result
 }
+
+//CONSULTAR: <consSitNFe versao="4.00" xmlns="http://www.portalfiscal.inf.br/nfe"><tpAmb>1</tpAmb><xServ>CONSULTAR</xServ><chNFe>43231092554054000117550020000251851001718068</chNFe></consSitNFe>
+//<?xml version="1.0" encoding="utf-8"?><soap12:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://www.w3.org/2003/05/soap-envelope"><soap12:Body><nfeDadosMsg xmlns="http://www.portalfiscal.inf.br/nfe/wsdl/NFeConsultaProtocolo4"><consSitNFe versao="4.00" xmlns="http://www.portalfiscal.inf.br/nfe"><tpAmb>1</tpAmb><xServ>CONSULTAR</xServ><chNFe>43231092554054000117550020000251851001718068</chNFe></consSitNFe></nfeDadosMsg></soap12:Body></soap12:Envelope>
+
+// httpWr.Timeout = timeOut == 0 ? 2000 : timeOut
+// httpWr.ContentLength = Encoding.UTF8.GetBytes(xmlSoap).Length
+// httpWr.ClientCertificates.Add(certificadoDigital)
+// httpWr.ComposeContentType('application/soap+xml', Encoding.UTF8, actionUrn)
+// httpWr.Method = 'POST'
+// {
+//   System.Security.Cryptography.X509Certificates.X509CertificateCollection
+// }
+
+// contentType: application / soap + xml
+// charset = utf - 8
+// action = 'http://www.portalfiscal.inf.br/nfe/wsdl/NFeConsultaProtocolo4/nfeConsultaNF'
+
+// xmlRetorno: '<?xml version="1.0" encoding="utf-8"?><soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"><soap:Body><nfeResultMsg xmlns="http://www.portalfiscal.inf.br/nfe/wsdl/NFeConsultaProtocolo4"><retConsSitNFe versao="4.00" xmlns="http://www.portalfiscal.inf.br/nfe"><tpAmb>1</tpAmb><verAplic>RS202308181530</verAplic><cStat>100</cStat><xMotivo>Autorizado o uso da NF-e</xMotivo><cUF>43</cUF><dhRecbto>2023-10-18T11:06:15-03:00</dhRecbto><chNFe>4323109255</chNFe><protNFe versao="4.00"><infProt Id="ID143230"><tpAmb>1</tpAmb><verAplic>RS202310161514</verAplic><chNFe>432310925540548</chNFe><dhRecbto>2023-10-17T09:01:44-03:00</dhRecbto><nProt>143</nProt><digVal>99Kh3jqazSzs94=</digVal><cStat>100</cStat><xMotivo>Autorizado o uso da NF-e</xMotivo></infProt></protNFe></retConsSitNFe></nfeResultMsg></soap:Body></soap:Envelope>'

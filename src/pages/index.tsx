@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-misused-promises */
 'use client'
 import { consultaStatusServico } from 'lib/services/consultaStatusServico'
 import Head from 'next/head'
@@ -13,7 +12,7 @@ export default function Home() {
   const [certSenha, setCertSenha] = useState<string>('')
   const [ufEmi, setUfEmi] = useState<UfEmi>(UfEmi.RS)
 
-  const consulta = async () => {
+  const consultaAsync = async () => {
     const options: IConsultaStatusServico = {
       ufEmi: ufEmi,
       modeloDocumento: ModeloDocumento.NFe,
@@ -68,7 +67,7 @@ export default function Home() {
 
       <hr />
 
-      <button type="button" onClick={() => consulta()}>
+      <button type="button" onClick={() => consultaAsync()}>
         ConsultaStatusServico
       </button>
     </>
