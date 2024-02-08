@@ -9,7 +9,7 @@ import { ufEmiList } from 'lib/utils/uf/ufHelper'
 
 export default function Home() {
   const [certA1, setCertA1] = useState<string>('')
-  const [certSenha, setCertSenha] = useState<string>('')
+  const [certSenha, setCertSenha] = useState<string>('31353631')
   const [ufEmi, setUfEmi] = useState<UfEmi>(UfEmi.RS)
 
   const consultaAsync = async () => {
@@ -47,19 +47,20 @@ export default function Home() {
                 console.log(reader.result)
                 setCertA1(reader.result as string)
               }
-              reader.readAsArrayBuffer(file)
+              reader.readAsDataURL(file)
             }
           }
         }}
       />
       <h5>Senha</h5>
       <input
-        onBlur={(e: ChangeEvent<HTMLInputElement>) => {
+        value={certSenha}
+        onBlur={(e) => {
           setCertSenha(e.target.value)
         }}
       />
       <h5>UF</h5>
-      <select onChange={(e) => setUfEmi(e.target.value as UfEmi)}>
+      <select value={ufEmi} onChange={(e) => setUfEmi(e.target.value as UfEmi)}>
         {ufEmiList.map((x) => (
           <option key={x}>{x}</option>
         ))}

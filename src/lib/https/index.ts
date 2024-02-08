@@ -27,7 +27,7 @@ const CA = [
 
 const getHttpAgent = (certificado: string, senha: string): https.Agent => {
   const httpsAgent = new https.Agent({
-    rejectUnauthorized: false,
+    rejectUnauthorized: true,
     cert: certificado,
     key: senha,
     ca: CA,
@@ -44,13 +44,13 @@ export const soapXmlPost = async (options: IHttpSoap) => {
     headers: {
       //'User-Agent': `scalar-comunica-dfe/0-1`,
       // 'User-Agent': `scalar-comunica-dfe/${VERSION}`,
-      'Content-Type': 'application/soap+xml;charset=utf-8',
-      'Access-Control-Allow-Origin': '*',
+      //'Content-Type': 'application/soap+xml;charset=utf-8',
+      //'Access-Control-Allow-Origin': '*',
       // 'Access-Control-Allow-Credentials': true,
-      'Access-Control-Allow-Headers': 'Content-Type',
-      'Access-Control-Allow-Methods': 'GET,POST',
+      //'Access-Control-Allow-Headers': 'Content-Type',
+      //'Access-Control-Allow-Methods': 'GET,POST',
     },
-    timeout: 60000,
+    timeout: 300000,
     httpsAgent: getHttpAgent(certificado, senha),
   })
 
